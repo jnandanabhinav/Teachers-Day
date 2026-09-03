@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Teacher's Day Celebration</title>
+  <link rel="stylesheet" href="final-style.css">
+</head>
+<body>
+
+  <!-- Background Space Canvas Layers -->
+  <canvas id="bg-canvas"></canvas>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="card-container">
+    <div class="glow-wrapper"></div>
+    
+    <!-- Main Interactive Cool Card Frame -->
+    <div class="premium-card" id="main-card">
+      <div class="badge">✨ Special Edition ✨</div>
+      <div class="icon-orb">🎓</div>
+      <h1 class="gradient-title">Happy Teacher's Day!</h1>
+      
+      <div class="typing-container">
+        <p id="typing-quote">"To the world you may be just a teacher, but to your students you are a hero."</p>
+      </div>
+
+      <!-- Action Button Panel Menu Layout -->
+      <div class="action-menu">
+        <button class="menu-btn trivia-trigger" onclick="openModal('trivia-modal', event)">🎮 Play Class Trivia</button>
+        <button class="menu-btn wisdom-trigger" onclick="openModal('wisdom-modal', event)">🔮 Draw Wisdom Card</button>
+      </div>
+
+      <p class="tap-hint">Tap background to launch celebration rockets!</p>
+    </div>
+  </div>
+
+  <!-- Modal View 1: Classroom Trivia Pop-up -->
+  <div id="trivia-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('trivia-modal')">✕</button>
+      <h2>🎮 Teacher's Superpower Quiz</h2>
+      <p id="quiz-question" class="quiz-text">Loading question...</p>
+      <div id="quiz-options" class="options-container"></div>
+      <p id="quiz-feedback" class="feedback-text"></p>
+    </div>
+  </div>
+
+  <!-- Modal View 2: Wisdom Fortune Teller Pop-up -->
+  <div id="wisdom-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('wisdom-modal')">✕</button>
+      <h2>🔮 Wisdom Fortune Teller</h2>
+      <div class="wisdom-box">
+        <p id="wisdom-display">Tap the draw button below to pull a special dynamic morning boost phrase card!</p>
+      </div>
+      <button class="action-btn" onclick="generateWisdomCard()">✨ Generate New Boost ✨</button>
+    </div>
+  </div>
+
+  <script src="final-script.js"></script>
+</body>
+</html>
