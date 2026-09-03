@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher's Day Interactive Portal</title>
+  <link rel="stylesheet" href="portal-style.css">
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Audio Element (Uses a copyright-free ambient piano track) -->
+  <audio id="bg-music" loop>
+    <source src="https://mixkit.co" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating Audio Controls -->
+  <button id="music-toggle" class="floating-btn">🎵 Music: Off</button>
+
+  <div class="main-wrapper">
+    
+    <!-- Home Dashboard View -->
+    <div id="home-view" class="portal-panel active">
+      <div class="badge">✨ Ultimate Gift Pack ✨</div>
+      <h1 class="glow-text">The Celebration Hub</h1>
+      <p class="subtitle">Thank you for being our ultimate hero. Click any portal below to explore your gifts!</p>
+      
+      <div class="menu-grid">
+        <button class="menu-card" onclick="switchView('guestbook-view')">
+          <div class="card-icon">💌</div>
+          <h3>Read Class Notes</h3>
+          <p>Letters from your favorite students</p>
+        </button>
+
+        <button class="menu-card" onclick="switchView('gallery-view')">
+          <div class="card-icon">📸</div>
+          <h3>Memory Lane</h3>
+          <p>Snapshots of our journey together</p>
+        </button>
+
+        <button class="menu-card" onclick="switchView('wisdom-view')">
+          <div class="card-icon">🔮</div>
+          <h3>Daily Wisdom Booster</h3>
+          <p>Tap for an instant spark of joy</p>
+        </button>
+      </div>
+    </div>
+
+    <!-- 1. Guestbook View -->
+    <div id="guestbook-view" class="portal-panel">
+      <button class="back-btn" onclick="switchView('home-view')">⬅ Back to Hub</button>
+      <h2>💌 Class Guestbook</h2>
+      <div class="scroller-box">
+        <div class="note-card">
+          <h4>- From Rahul</h4>
+          <p>"Thank you for never giving up on me during math class. You make every formula feel like a puzzle!"</p>
+        </div>
+        <div class="note-card">
+          <h4>- From Ananya</h4>
+          <p>"Your energy every Monday morning changes the mood of the entire room. Best mentor ever!"</p>
+        </div>
+        <div class="note-card">
+          <h4>- From your Backbenchers</h4>
+          <p>"We might joke around a lot, but your classes are the ones we truly look forward to. Thank you!"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Memory Lane Gallery View -->
+    <div id="gallery-view" class="portal-panel">
+      <button class="back-btn" onclick="switchView('home-view')">⬅ Back to Hub</button>
+      <h2>📸 Memory Lane</h2>
+      <p class="info-tag">(Replace these placeholders online with your actual class pictures!)</p>
+      <div class="gallery-slider">
+        <img id="slider-img" src="https://unsplash.com" alt="Classroom">
+        <div class="slider-controls">
+          <button onclick="prevImage()">◀ Prev</button>
+          <button onclick="nextImage()">Next ▶</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Wisdom Generator View -->
+    <div id="wisdom-view" class="portal-panel">
+      <button class="back-btn" onclick="switchView('home-view')">⬅ Back to Hub</button>
+      <h2>🔮 Teacher Wisdom Machine</h2>
+      <div class="wisdom-box">
+        <p id="wisdom-text">Tap the generator button to draw your dynamic morning inspiration quote!</p>
+      </div>
+      <button class="action-btn" onclick="generateWisdom()">✨ Pull Fortune Card ✨</button>
+    </div>
+
+  </div>
+
+  <script src="portal-script.js"></script>
+</body>
+</html>
